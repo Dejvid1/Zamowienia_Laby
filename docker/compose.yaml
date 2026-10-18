@@ -1,0 +1,7 @@
+name: "zamowienia-projekt"
+services:
+  aplikacja:
+    image: zamowienia-obraz:1
+    container_name: "zamowienia-kontener"
+    volumes:
+      - "../zamowienia:/app/zamowienia"

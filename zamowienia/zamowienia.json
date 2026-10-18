@@ -1,0 +1,20 @@
+{
+  "zamawiajacy": {
+  "imie": "Kamil",
+  "nazwisko": "Kowalski",
+  "email": "kamil.kowalski@wp.pl",
+  "numer_telefonu": "111 222 333"
+  },
+  "produkty": [
+    {
+      "kodProduktu": "produkt-01",
+      "ilosc": 2,
+      "jednostkaMiary": "szt"
+    },
+    {
+      "kodProduktu": "produkt-02",
+      "ilosc": 1.5,
+      "jednostkaMiary": "kg"
+    }
+  ]
+}
