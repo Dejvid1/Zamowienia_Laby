@@ -25,15 +25,17 @@ public class Main {
             File katalog = new File(sciezka);
 
             if (katalog.exists()) {
-                File[] plikiJson = katalog.listFiles();
+                File[] pliki = katalog.listFiles();
 
-                if (plikiJson != null) {
+                if (pliki != null) {
                     ObjectMapper objectMapper = new ObjectMapper();
 
-                    for (File plik : plikiJson) {
+                    for (File plik : pliki) {
                         if (plik.isFile() && plik.getName().endsWith(".json")) {
                             Zamowienie wczytaneZamowienie = objectMapper.readValue(plik, Zamowienie.class);
+                            int nr_zamowienia = Math.abs(wczytaneZamowienie.hashCode());
                             System.out.println("Wczytano plik: " + plik.getName());
+                            System.out.println("numer zamowienia: " + nr_zamowienia);
                             System.out.println("Zamawiajacy: " + wczytaneZamowienie.getZamawiajacy().getImie() + " " +
                                     wczytaneZamowienie.getZamawiajacy().getNazwisko());
                         }
