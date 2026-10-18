@@ -20,8 +20,6 @@ public class Main {
             Configuration config = builder.getConfiguration();
             String sciezka = config.getString("sciezka_katalog_zamowien");
 
-            System.out.println("Sciezka do katalogu zamowien to: " + sciezka);
-
             File katalog = new File(sciezka);
 
             if (katalog.exists()) {
@@ -34,8 +32,7 @@ public class Main {
                         if (plik.isFile() && plik.getName().endsWith(".json")) {
                             Zamowienie wczytaneZamowienie = objectMapper.readValue(plik, Zamowienie.class);
                             int nr_zamowienia = Math.abs(wczytaneZamowienie.hashCode());
-                            System.out.println("Wczytano plik: " + plik.getName());
-                            System.out.println("numer zamowienia: " + nr_zamowienia);
+                            System.out.println("numer zamowienia: " +"ODER-"+ nr_zamowienia);
                             System.out.println("Zamawiajacy: " + wczytaneZamowienie.getZamawiajacy().getImie() + " " +
                                     wczytaneZamowienie.getZamawiajacy().getNazwisko());
                         }
